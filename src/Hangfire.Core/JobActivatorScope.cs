@@ -22,7 +22,7 @@ namespace Hangfire
     public abstract class JobActivatorScope : IDisposable
     {
         private static readonly ThreadLocal<JobActivatorScope> _current
-            = new ThreadLocal<JobActivatorScope>(trackAllValues: false);
+		= new ThreadLocal<JobActivatorScope>();
 
         protected JobActivatorScope()
         {
