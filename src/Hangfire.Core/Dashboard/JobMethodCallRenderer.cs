@@ -44,7 +44,7 @@ namespace Hangfire.Dashboard
             {
                 var serviceName = GetNameWithoutGenericArity(job.Type);
 
-                if (job.Type.GetTypeInfo().IsInterface && serviceName[0] == 'I' && Char.IsUpper(serviceName[1]))
+                if (job.Type.IsInterface && serviceName[0] == 'I' && Char.IsUpper(serviceName[1]))
                 {
                     serviceName = serviceName.Substring(1);
                 }
@@ -227,9 +227,9 @@ namespace Hangfire.Dashboard
             if (type == typeof (string)) return null;
 
             return type.GetInterfaces()
-                .Where(x => x.GetTypeInfo().IsGenericType
-                            && x.GetTypeInfo().GetGenericTypeDefinition() == typeof (IEnumerable<>))
-                .Select(x => x.GetTypeInfo().GetGenericArguments()[0])
+                .Where(x => x.IsGenericType
+                            && x.GetGenericTypeDefinition() == typeof (IEnumerable<>))
+                .Select(x => x.GetGenericArguments()[0])
                 .FirstOrDefault();
         }
 
@@ -287,7 +287,7 @@ namespace Hangfire.Dashboard
 
             public static ArgumentRenderer GetRenderer(Type type)
             {
-                if (type.GetTypeInfo().IsEnum)
+                if (type.IsEnum)
                 {
                     return new ArgumentRenderer
                     {
@@ -382,7 +382,7 @@ namespace Hangfire.Dashboard
 
             private static bool IsNullableType(Type type)
             {
-                return type.GetTypeInfo().IsGenericType && type.GetTypeInfo().GetGenericTypeDefinition() == typeof(Nullable<>);
+                return type.IsGenericType && type.GetGenericTypeDefinition() == typeof(Nullable<>);
             }
         }
     }

@@ -157,7 +157,7 @@ namespace Hangfire.Server
             JobStorage storage,
             IStorageConnection connection, 
             string recurringJobId, 
-            IReadOnlyDictionary<string, string> recurringJob)
+            IDictionary<string, string> recurringJob)
         {
             var serializedJob = JobHelper.FromJson<InvocationData>(recurringJob["Job"]);
             var job = serializedJob.Deserialize();

@@ -172,7 +172,7 @@ namespace Hangfire.Server
                 Guid.NewGuid());
         }
 
-        private static ServerContext GetServerContext(IReadOnlyDictionary<string, object> properties)
+        private static ServerContext GetServerContext(IDictionary<string, object> properties)
         {
             var serverContext = new ServerContext();
 

@@ -79,7 +79,7 @@ namespace Hangfire.Storage
                 JobHelper.ToJson(SerializeArguments(job.Args)));
         }
 
-        internal static string[] SerializeArguments(IReadOnlyCollection<object> arguments)
+        internal static string[] SerializeArguments(ICollection<object> arguments)
         {
             var serializedArguments = new List<string>(arguments.Count);
             foreach (var argument in arguments)

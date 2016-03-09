@@ -50,7 +50,7 @@ namespace Hangfire.Client
         {
             get
             {
-                return new ReadOnlyDictionary<string, object>(base.Parameters);
+                return new Dictionary<string, object>(base.Parameters);
             }
         }
 

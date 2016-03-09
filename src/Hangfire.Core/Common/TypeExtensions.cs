@@ -8,7 +8,7 @@ namespace Hangfire.Common
     {
         public static string ToGenericTypeString(this Type t)
         {
-            if (!t.GetTypeInfo().IsGenericType)
+            if (!t.IsGenericType)
             {
                 return t.Name;
             }

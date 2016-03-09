@@ -43,7 +43,7 @@ namespace Hangfire.Server
         public string ServerId { get; private set; }
 
         [NotNull]
-        public IReadOnlyDictionary<string, object> Properties { get; private set; }
+        public IDictionary<string, object> Properties { get; private set; }
 
         [NotNull]
         public JobStorage Storage { get; private set; }

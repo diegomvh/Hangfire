@@ -174,7 +174,7 @@ namespace Hangfire.Common
         /// method invocation during the performance.
         /// </summary>
         [NotNull]
-        public IReadOnlyList<object> Args { get; private set; }
+        public IList<object> Args { get; private set; }
         
         public override string ToString()
         {

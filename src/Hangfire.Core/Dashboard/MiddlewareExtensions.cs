@@ -80,7 +80,7 @@ namespace Hangfire.Dashboard
                     if (options.AuthorizationFilters.Any(filter => !filter.Authorize(context.Environment)))
                     {
                         context.Response.StatusCode = (int)HttpStatusCode.Unauthorized;
-                        return Task.FromResult(false);
+					return Net40Helpers.FromResult(false);
                     }
 
                     var dispatcherContext = new RequestDispatcherContext(

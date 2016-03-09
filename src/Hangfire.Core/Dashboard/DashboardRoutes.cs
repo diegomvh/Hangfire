@@ -195,7 +195,7 @@ namespace Hangfire.Dashboard
 
         private static Assembly GetExecutingAssembly()
         {
-            return typeof (DashboardRoutes).GetTypeInfo().Assembly;
+            return typeof (DashboardRoutes).Assembly;
         }
     }
 }

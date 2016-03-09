@@ -85,7 +85,7 @@ namespace Hangfire.Server
 
                 try
                 {
-                    using (var timeoutCts = new CancellationTokenSource(JobInitializationWaitTimeout))
+					using (var timeoutCts = new CancellationTokenSource())
                     using (var linkedCts = CancellationTokenSource.CreateLinkedTokenSource(
                         context.CancellationToken,
                         timeoutCts.Token))
