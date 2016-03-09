@@ -43,7 +43,7 @@ namespace Hangfire.Core.Tests.Server
         public void Ctor_ThrowsAnException_WhenStateChangerIsNull()
         {
             var exception = Assert.Throws<ArgumentNullException>(
-                () => new DelayedJobScheduler(Timeout.InfiniteTimeSpan, null));
+                () => new DelayedJobScheduler(Net40Helpers.InfiniteTimeSpan, null));
 
             Assert.Equal("stateChanger", exception.ParamName);
         }
@@ -105,7 +105,7 @@ namespace Hangfire.Core.Tests.Server
 
         private DelayedJobScheduler CreateScheduler()
         {
-            return new DelayedJobScheduler(Timeout.InfiniteTimeSpan, _stateChanger.Object);
+            return new DelayedJobScheduler(Net40Helpers.InfiniteTimeSpan, _stateChanger.Object);
         }
     }
 }

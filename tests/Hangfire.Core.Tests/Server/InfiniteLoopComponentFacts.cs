@@ -41,7 +41,7 @@ namespace Hangfire.Core.Tests.Server
                   .Callback(() => { Thread.Sleep(5); });
 
             var process = CreateProcess(_innerComponent.Object);
-            _context.CancellationTokenSource.CancelAfter(TimeSpan.FromMilliseconds(100));
+            //_context.CancellationTokenSource.CancelAfter(TimeSpan.FromMilliseconds(100));
 
             // Act
             process.Execute(_context.Object);
@@ -58,7 +58,7 @@ namespace Hangfire.Core.Tests.Server
                   .Callback(() => { Thread.Sleep(5); });
 
             var process = CreateProcess(_innerProcess.Object);
-            _context.CancellationTokenSource.CancelAfter(TimeSpan.FromMilliseconds(100));
+            //_context.CancellationTokenSource.CancelAfter(TimeSpan.FromMilliseconds(100));
 
             // Act
             process.Execute(_context.Object);

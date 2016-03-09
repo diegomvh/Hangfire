@@ -16,7 +16,7 @@ namespace Hangfire.Core.Tests.Server
 
         public ServerWatchdogFacts()
         {
-            _checkInterval = Timeout.InfiniteTimeSpan;
+            _checkInterval = Net40Helpers.InfiniteTimeSpan;
             _serverTimeout = TimeSpan.FromSeconds(5);
 
             _context = new BackgroundProcessContextMock();

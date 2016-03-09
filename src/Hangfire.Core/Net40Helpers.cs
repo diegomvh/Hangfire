@@ -3,13 +3,16 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Hangfire
 {
 	public static class Net40Helpers
 	{
-		public static Task<T> FromResult<T>(T value)
+        public static readonly TimeSpan InfiniteTimeSpan = new TimeSpan(0, 0, 0, 0, Timeout.Infinite);
+
+        public static Task<T> FromResult<T>(T value)
 		{
 			var tcs = new TaskCompletionSource<T>();
 			tcs.SetResult(value);

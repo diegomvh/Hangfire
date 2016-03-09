@@ -56,7 +56,7 @@ namespace Hangfire.Core.Tests.States
                 .Setup(x => x.AcquireDistributedLock(String.Format("job:{0}:state-lock", JobId), It.IsAny<TimeSpan>()))
                 .Returns(_distributedLock.Object);
 
-            _cts = new CancellationTokenSource(TimeSpan.FromSeconds(1));
+            _cts = new CancellationTokenSource();
             _context = new StateChangeContextMock
             {
                 BackgroundJobId = JobId,
