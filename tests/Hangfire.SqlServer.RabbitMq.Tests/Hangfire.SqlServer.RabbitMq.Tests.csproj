@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\..\packages\xunit.runner.visualstudio.2.0.0\build\net20\xunit.runner.visualstudio.props" Condition="Exists('..\..\packages\xunit.runner.visualstudio.2.0.0\build\net20\xunit.runner.visualstudio.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -10,7 +10,6 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Hangfire.SqlServer.RabbitMq.Tests</RootNamespace>
     <AssemblyName>Hangfire.SqlServer.RabbitMq.Tests</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
     <NuGetPackageImportStamp>844e6457</NuGetPackageImportStamp>
@@ -37,10 +36,6 @@
     <Reference Include="Moq">
       <HintPath>..\..\packages\Moq.4.2.1402.2112\lib\net40\Moq.dll</HintPath>
     </Reference>
-    <Reference Include="RabbitMQ.Client, Version=3.5.1.0, Culture=neutral, PublicKeyToken=89e7d7c5feba84ce, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\RabbitMQ.Client.3.5.1\lib\net40\RabbitMQ.Client.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -50,6 +45,9 @@
     <Reference Include="System.Xml" />
     <Reference Include="xunit">
       <HintPath>..\..\packages\xunit.1.9.2\lib\net20\xunit.dll</HintPath>
+    </Reference>
+    <Reference Include="RabbitMQ.Client">
+      <HintPath>..\..\packages\RabbitMQ.Client.3.5.1\lib\net40\RabbitMQ.Client.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -66,15 +64,15 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Hangfire.Core\Hangfire.Core.csproj">
-      <Project>{c995ea9e-56ee-4951-8260-d94260a7f4c2}</Project>
+      <Project>{C995EA9E-56EE-4951-8260-D94260A7F4C2}</Project>
       <Name>Hangfire.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\src\Hangfire.SqlServer.RabbitMq\Hangfire.SqlServer.RabbitMq.csproj">
-      <Project>{4cc51f69-0311-4485-b7de-9ecab3a1b5e5}</Project>
+      <Project>{4CC51F69-0311-4485-B7DE-9ECAB3A1B5E5}</Project>
       <Name>Hangfire.SqlServer.RabbitMq</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\src\Hangfire.SqlServer\Hangfire.SqlServer.csproj">
-      <Project>{a523c0e3-097d-4869-977f-15a717ea3e83}</Project>
+      <Project>{A523C0E3-097D-4869-977F-15A717EA3E83}</Project>
       <Name>Hangfire.SqlServer</Name>
     </ProjectReference>
   </ItemGroup>

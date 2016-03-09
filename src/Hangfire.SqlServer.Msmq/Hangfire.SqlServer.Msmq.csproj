@@ -9,7 +9,6 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Hangfire.SqlServer.Msmq</RootNamespace>
     <AssemblyName>Hangfire.SqlServer.Msmq</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
     <NuGetPackageImportStamp>c3e1fd91</NuGetPackageImportStamp>
